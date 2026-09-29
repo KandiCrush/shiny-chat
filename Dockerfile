@@ -7,7 +7,7 @@ RUN echo "options(renv.config.pak.enabled = FALSE, repos = c(CRAN = 'https://cra
 RUN R -e 'install.packages("remotes")'
 RUN R -e 'remotes::install_version("renv", version = "1.2.4")'
 COPY renv.lock renv.lock
-RUN --mount=type=cache,id=renv-cache,target=${RENV_PATHS_CACHE} R -e 'renv::restore()'
+RUN R -e "renv::restore()"
 WORKDIR /srv/shiny-server/
 COPY . /srv/shiny-server/
 EXPOSE 3838

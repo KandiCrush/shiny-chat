@@ -1,4 +1,4 @@
-library(shiny2docker)
+# library(shiny2docker)
 library(shiny)
 library(shinychat)
 
